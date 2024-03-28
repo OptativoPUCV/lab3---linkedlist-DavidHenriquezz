@@ -66,10 +66,12 @@ void * lastList(List * list) {
 }
 
 void * prevList(List * list) {
-  if (list == NULL)
+  if (list == NULL || list -> current == NULL || list -> current -> prev == NULL){
     return NULL;
+  }
   else{
-    list->current = list->current->prev;
+    Node * aux = list->current->prev;
+    list->current = aux;
     }
   return (void *)list -> current -> data;
 }
