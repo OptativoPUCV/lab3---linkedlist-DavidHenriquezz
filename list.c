@@ -69,10 +69,8 @@ void * prevList(List * list) {
   if (list == NULL)
     return NULL;
   else{
-    while (list -> current -> prev != NULL){
-      list->current = list->current->prev;
+    list->current = list->current->prev;
     }
-  }
   return (void *)list -> current -> data;
 }
 
