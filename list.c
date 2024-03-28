@@ -62,7 +62,8 @@ void * lastList(List * list) {
     while (aux -> next != NULL){
       aux = aux -> next;
     }
-    return (void *)aux -> data;
+    list->current = aux;
+    return (void *)list->current;
   }
 }
 
