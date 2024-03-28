@@ -88,15 +88,13 @@ void pushFront(List * list, void * data) {
 void pushBack(List * list, void * data) {
   if (list == NULL)
     return;
-  Node * aux = (Node*)malloc(sizeof(Node));
-  aux = list->head;
+  Node * aux = list->head;
   while (aux -> next != NULL){
     aux = aux -> next;
   }
-  aux -> data = data;
-  aux -> next = NULL;
-  aux -> prev = list->tail;
-  list->tail = aux;
+  Node * newNode = createNode(data);
+  aux -> next = newNode;
+  newNode->prev = aux;
 }
 
 void pushCurrent(List * list, void * data) {
