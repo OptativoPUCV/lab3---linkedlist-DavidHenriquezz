@@ -55,7 +55,15 @@ void * nextList(List * list) {
 }
 
 void * lastList(List * list) {
+  Node * aux = list -> head;
+  if (list == NULL)
     return NULL;
+  else{
+    while (aux -> next != NULL){
+      aux = aux -> next;
+    }
+    return (void *)aux -> data;
+  }
 }
 
 void * prevList(List * list) {
